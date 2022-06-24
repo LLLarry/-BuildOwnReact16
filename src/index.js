@@ -1,17 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from './react';
+// import ReactDOM from 'react-dom/client';
+import ReactDOM from './react-dom'
+console.log(React)
+const element = (
+  <div id="A1" style={{ border: '2px solid red', margin: '5px' }}>
+    A1
+    <div id="B1" style={{ border: '2px solid red', margin: '5px' }}>
+      <div id="C1" style={{ border: '2px solid red', margin: '5px' }}>C1</div>
+      <div id="C2" style={{ border: '2px solid red', margin: '5px' }}>C2</div>
+    </div>
+    <div id="B2" style={{ border: '2px solid red', margin: '5px' }}>B2</div>
+  </div>
+)
+// const element = React.createElement("div", 
+//     {
+//       id: "A1"
+//     }, 
+//     React.createElement("div",
+//         {
+//           id: "B1"
+//         }, 
+//         React.createElement("div", {
+//           id: "C1"
+//         }, "C1"), 
+//         React.createElement("div", {
+//           id: "C2"
+//         }, "C2")
+//     ), 
+//     React.createElement("div", {
+//       id: "B2"
+//     }, "B2")
+// );
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+console.log(JSON.stringify(element, null, 2))
+ReactDOM.render(
+  element,
+  document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
